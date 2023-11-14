@@ -22,5 +22,6 @@ int _putchar(char c);
 int cf(va_list arg);
 int sf(va_list arg);
 int pf(va_list arg __attribute((unused)));
-
+int df(va_list arg);
+int print_s(long int i, long int n);
 #endif

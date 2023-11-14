@@ -11,37 +11,37 @@
 int _printf(const char *format, ...)
 {
 	va_list arg;
-	int i, j, n_char = 0;
-	print_f data[] = {
-		{"c", cf}, {"s", sf}, {"%", pf}
+	int k, l, n_char = 0;
+	print_f data[] ={
+		{"c", cf}, {"s", sf}, {"%", pf}, {"d", df},{"i", df}
 	};
 	va_start(arg, format);
 	if (!format)
 		return (-1);
-	for (i = 0; format[i]; i++)
+	for (k = 0; format[k]; k++)
 	{
-		if (format[i] != '%')
+		if (format[k] != '%')
 		{
-			_putchar(format[i]);
+			_putchar(format[k]);
 			n_char++;
 		}
 		else
 		{
-			if (!format[i + 1] || format[i + 1] == ' ')
+			if (!format[k + 1] || format[k + 1] == ' ')
 				return (-1);
-			for (j = 0; j < 8; j++)
+			for (l = 0; l < 8; l++)
 			{
-				if (format[i + 1] == *(data[j].c))
+				if (format[k + 1] == *(data[l].c))
 					break;
 			}
-			if (j < 8)
+			if (l < 8)
 			{
-				n_char = n_char + data[j].pr_f(arg);
-				i++;
+				n_char = n_char + data[l].pr_f(arg);
+				k++;
 			}
 			else
 			{
-				_putchar(format[i]);
+				_putchar(format[k]);
 				n_char++;
 			}
 		}
