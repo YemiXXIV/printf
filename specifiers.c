@@ -74,6 +74,7 @@ int df(va_list arg)
  * print_s - A function to print signed integers
  * @i: The integer to be printed
  * @n: length of integer
+ * Return: The nth length of the integer
  */
 
 int print_s(long int i, long int n)

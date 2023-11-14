@@ -12,8 +12,8 @@ int _printf(const char *format, ...)
 {
 	va_list arg;
 	int k, l, n_char = 0;
-	print_f data[] ={
-		{"c", cf}, {"s", sf}, {"%", pf}, {"d", df},{"i", df}
+	print_f data[] = {
+		{"c", cf}, {"s", sf}, {"%", pf}, {"d", df}, {"i", df}
 	};
 	va_start(arg, format);
 	if (!format)
